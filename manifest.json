@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Telegram Link Enhancer",
+  "version": "1.0.0",
+  "description": "Seamlessly open Telegram links in your desktop app with one click",
+
+  "permissions": ["activeTab"],
+
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "js": ["content.js"],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ],
+
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+
+  "homepage_url": "https://github.com/yourusername/telegram-deeplink-extension",
+
+  "author": "Mohammad Mohammadalian"
+}
