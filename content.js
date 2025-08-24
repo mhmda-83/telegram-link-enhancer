@@ -89,7 +89,6 @@
         return deepLink;
       }
 
-      // Handle phone numbers: /+1234567890
       if (firstPart.startsWith('+')) {
         const phoneNumber = firstPart.slice(1); // Remove '+' prefix
         if (!phoneNumber) return null;
@@ -103,9 +102,6 @@
         }
         if (params.has('profile')) {
           deepLink += '&profile=1';
-        }
-        if (params.has('start')) {
-          deepLink += `&start=${safeEncodeURIComponent(params.get('start'))}`;
         }
 
         return deepLink;
@@ -125,6 +121,9 @@
         }
         if (params.has('profile')) {
           deepLink += '&profile=1';
+        }
+        if (params.has('start')) {
+          deepLink += `&start=${safeEncodeURIComponent(params.get('start'))}`;
         }
 
         return deepLink;

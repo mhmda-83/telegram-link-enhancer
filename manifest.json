@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Telegram Link Enhancer",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Seamlessly open Telegram links in your desktop app with one click",
 
   "permissions": ["activeTab"],
