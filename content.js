@@ -61,7 +61,7 @@
    * @param {URL} urlObj - Parsed URL object
    * @returns {string|null} - Deep link or null if not convertible
    */
-  function builddeepLink(urlObj) {
+  function buildDeepLink(urlObj) {
     try {
       const pathParts = urlObj.pathname
         .split('/')
@@ -103,6 +103,9 @@
         }
         if (params.has('profile')) {
           deepLink += '&profile=1';
+        }
+        if (params.has('start')) {
+          deepLink += `&start=${safeEncodeURIComponent(params.get('start'))}`;
         }
 
         return deepLink;
@@ -159,7 +162,7 @@
       return false;
     }
 
-    const deepLink = builddeepLink(urlObj);
+    const deepLink = buildDeepLink(urlObj);
     if (!deepLink) {
       return false;
     }
